@@ -6,7 +6,7 @@ import { useOrbis, User, UserPopup, Chat, Post } from "@orbisclub/components";
 import { getTimestamp } from "../utils";
 import { GlobalContext } from "../contexts/GlobalContext";
 import { getPassport } from "../utils/passport";
-
+import { ConnectButton } from "arweave-wallet-kit";
 function Header() {
   const { orbis, user, connecting, setConnectModalVis } = useOrbis();
   const [showCommunityChat, setShowCommunityChat] = useState(false);
@@ -87,7 +87,7 @@ function Header() {
                     {connecting ?
                       <div className="btn-sm btn-main w-full" onClick={() => setConnectModalVis(true)}><LoadingCircle style={{marginRight: 3}} /> Connecting</div>
                     :
-                      <div className="btn-sm btn-main w-full" onClick={() => setConnectModalVis(true)}>Connect</div>
+                      <ConnectButton/>
                     }
 
                   </li>
